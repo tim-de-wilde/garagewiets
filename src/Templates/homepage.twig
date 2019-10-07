@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="uk-section">
+            <h1 class="uk-text-center">Garage Wiets</h1>
+    </div>
+    <div class="uk-section">
+        <div class="uk-container uk-container-medium">
+            <div class="uk-child-width-expand@s uk-text-center uk-grid-small uk-grid-match" uk-grid>
+                <div>
+                    <h3>
+                        <a class="uk-link-reset" href="{{ ROOT }}/Database">
+                            <div class="uk-card uk-card-secondary uk-card-body">
+                                <h4 class="uk-card-title"><span uk-icon="icon: list; ratio: 2"></span></h4>
+                                <h3>Database</h3>
+                            </div>
+                        </a>
+                    </h3>
+                </div>
+                <div>
+                    <a class="uk-link-reset" href="{{ ROOT }}/Registratie">
+                        <div class="uk-card uk-card-secondary uk-card-body">
+                            <h4 class="uk-card-title"><span uk-icon="icon: pencil; ratio: 2"></span></h4>
+                            <h3>Registratie</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

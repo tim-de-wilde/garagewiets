@@ -1,0 +1,58 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="uk-margin">
+        <div class="uk-container uk-container-expand">
+            <ul uk-tab>
+                {% for table in tables %}
+                    <li>
+                        <a href="#">{{ table.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <ul class="uk-switcher">
+                {% for table in tables %}
+                    <li>
+                        <div class="uk-margin">
+                            <a href="{{ ROOT }}/{{ module }}/{{ table.name }}/new" class="uk-button uk-button-small uk-button-secondary">+ {{ table.name }}</a>
+                        </div>
+
+                        <table class="uk-table uk-table-striped">
+                            <thead>
+                            <tr>
+                                {% for header in table.headers %}
+                                    <th>{{ header }}</th>
+                                {% endfor %}
+                                <th class="uk-table-shrink">Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for row in table.rows %}
+                                <tr>
+                                    {% for value in row %}
+                                        <td>{{ value }}</td>
+                                    {% endfor %}
+                                    <td>
+                                        <a href="{{ ROOT }}/{{ module }}/{{ table.name }}/delete/{{ row.Id }}"
+                                           uk-icon="trash"></a>
+                                        <a href="{{ ROOT }}/{{ module }}/{{ table.name }}/edit/{{ row.Id }}"
+                                           uk-icon="pencil"></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('table').dataTable();
+    </script>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+<routes>
+    <route>
+        <method>GET</method>
+        <route>/Database</route>
+        <controller>\garagewiets\src\Modules\Database\Controllers\Tables</controller>
+        <permissions>guest</permissions>
+    </route>
+    <route>
+        <method>GET</method>
+        <route>/Database/[a:tableName]/edit/[i:id]</route>
+        <controller>\garagewiets\src\Modules\Database\Controllers\AddOrEdit</controller>
+        <permissions>guest</permissions>
+    </route>
+    <route>
+        <method>GET</method>
+        <route>/Database/[a:tableName]/new</route>
+        <controller>\garagewiets\src\Modules\Database\Controllers\AddOrEdit</controller>
+        <permissions>guest</permissions>
+    </route>
+    <route>
+        <method>GET</method>
+        <route>/Database/[a:tableName]/delete/[i:id]</route>
+        <controller>\garagewiets\src\Modules\Database\Controllers\Delete</controller>
+        <permissions>guest</permissions>
+    </route>
+</routes>

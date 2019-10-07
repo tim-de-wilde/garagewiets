@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="uk-container uk-container-small">
+        <div class="uk-margin-medium-top">
+            <form method="get">
+                <fieldset class="uk-fieldset">
+                    <legend class="uk-legend">Add or edit</legend>
+
+                    {% for key, value in row %}
+                        <div class="uk-margin">
+                            <label class="uk-form-label uk-text-bold">{{ key }}</label>
+                            <input class="uk-input" name="{{ key }}" type="text" value={{ value }}>
+                        </div>
+                    {% endfor %}
+
+                    <input type="submit" name="submit" class="uk-button uk-button-secondary uk-width-1-3">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

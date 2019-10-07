@@ -1,0 +1,8 @@
+<routes>
+    <route>
+        <method>GET</method>
+        <route>/Home</route>
+        <controller>\garagewiets\src\Modules\Homepage\Controllers\Homepage</controller>
+        <permissions>guest</permissions>
+    </route>
+</routes>

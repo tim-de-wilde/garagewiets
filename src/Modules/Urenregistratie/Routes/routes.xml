@@ -1,0 +1,14 @@
+<routes>
+    <route>
+        <method>GET</method>
+        <route>/Registratie</route>
+        <controller>\garagewiets\src\Modules\Urenregistratie\Controllers\Show</controller>
+        <permissions>guest</permissions>
+    </route>
+    <route>
+        <method>GET</method>
+        <route>/Registratie/[i:employee_id]</route>
+        <controller>\garagewiets\src\Modules\Urenregistratie\Controllers\Show</controller>
+        <permissions>guest</permissions>
+    </route>
+</routes>

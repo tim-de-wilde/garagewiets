@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block title %}
+    <title>Pagina niet gevonden!</title>
+{% endblock %}
+
+{% block content %}
+        <article class="uk-article uk-margin-medium-left uk-margin-medium-top">
+            <span uk-icon="icon: warning; ratio: 3" style="color: #c40000;"></span>
+            <h1 class="uk-article-title uk-text-bold" style="color: #c40000;">
+                Pagina niet gevonden!
+            </h1>
+            <p class="uk-text-lead">
+                Sorry, deze pagina kunnen we niet vinden. Terug naar <a href="{{ ROOT }}/Home">homepagina.</a>
+            </p>
+        </article>
+{% endblock %}

@@ -1,0 +1,40 @@
+<database name="garagewiets" defaultIdMethod="native">
+    <table name="user" phpName="User" namespace="User">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="username" type="varchar" size="255" required="true" />
+        <column name="email" type="varchar" size="255" required="true" />
+        <column name="password" type="varchar" size="255" required="true" />
+        <column name="permissions" type="ENUM" valueSet="guest, user, admin" defaultValue="user"/>
+        <behavior name="timestampable" />
+    </table>
+    <table name="customer" phpName="Customer" namespace="Customer">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="company" type="varchar" size="255"/>
+        <column name="last_name" type="varchar" size="255"/>
+        <column name="first_name" type="varchar" size="255"/>
+        <column name="infix" type="varchar" size="255"/>
+    </table>
+    <table name="vehicle" phpName="Vehicle" namespace="Vehicle">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="brand" type="varchar" required="true" size="255"/>
+        <column name="model" type="varchar" required="true" size="255"/>
+        <behavior name="timestampable"/>
+    </table>
+    <table name="maintenance" phpName="Maintenance" namespace="Maintenance">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="vehicle_id" type="integer" required="true"/>
+        <column name="state" type="ENUM" valueSet="in_progress, done" defaultValue="in_progress"/>
+    </table>
+    <table name="purchase" phpName="Purchase" namespace="Purchase">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="customer_id" type="integer" required="true"/>
+        <column name="vehicle_id" type="integer" required="true"/>
+        <column name="sale_date" type="date"/>
+        <behavior name="timestampable"/>
+    </table>
+    <table name="schedule" phpName="Schedule" namespace="Schedule">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="user_id" type="integer" required="true"/>
+        <column name="data" type="array" required="true"/>
+    </table>
+</database>

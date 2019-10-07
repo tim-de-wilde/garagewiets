@@ -1,0 +1,47 @@
+<html lang="nl">
+<head>
+    {% block title %}
+        <title>Garage Wiets</title>
+    {% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="{{ ROOT }}/assets/css/uikit.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+</head>
+    <header>
+        {% block header %}
+            <div class="uk-navbar uk-navbar-container uk-padding-remove">
+                <div class="uk-navbar-left">
+                    <a href="{{ ROOT }}" class="uk-navbar-item uk-logo">Garage Wiets</a>
+                </div>
+
+                <div class="uk-navbar-center">
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="{{ ROOT }}/Database">Database</a>
+                        </li>
+                        <li>
+                            <a href="{{ ROOT }}/Registratie">Urenregistratie</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endblock %}
+    </header>
+    <body>
+        {% block content %}
+
+        {% endblock %}
+
+        <script src="{{ ROOT }}/assets/js/uikit.min.js"></script>
+        <script src="{{ ROOT }}/assets/js/uikit-icons.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+        {% block script %}
+
+        {% endblock %}
+    </body>
+</html>
